@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .font-jua {
+    font-family: 'Jua', sans-serif;
+  }
+  .font-gaegu {
+    font-family: 'Gaegu', cursive, sans-serif;
+  }
+}
+
+/* Custom keyframes & background patterns */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(2deg); }
+}
+
+@keyframes pulse-gentle {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+}
+
+@keyframes pop {
+  0% { transform: scale(0.8); opacity: 0; }
+  70% { transform: scale(1.1); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-gentle {
+  animation: pulse-gentle 2s ease-in-out infinite;
+}
+
+.animate-pop {
+  animation: pop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+/* Kid-friendly playful pattern background */
+.bg-kids-pattern {
+  background-color: #fefce8;
+  background-image: radial-gradient(#3b82f6 1.5px, transparent 1.5px), radial-gradient(#ec4899 1.5px, #fefce8 1.5px);
+  background-size: 44px 44px;
+  background-position: 0 0, 22px 22px;
+}
+
+/* Vibrant Palette 3D Tactile Card & Button Utilities */
+.btn-vibrant-blue {
+  background-color: #3b82f6;
+  color: #ffffff;
+  box-shadow: 0 6px 0 0 #1d4ed8;
+}
+.btn-vibrant-blue:hover {
+  background-color: #2563eb;
+}
+.btn-vibrant-blue:active {
+  box-shadow: 0 2px 0 0 #1d4ed8;
+  transform: translateY(4px);
+}
+
+.btn-vibrant-pink {
+  background-color: #ec4899;
+  color: #ffffff;
+  box-shadow: 0 6px 0 0 #be185d;
+}
+.btn-vibrant-pink:hover {
+  background-color: #db2777;
+}
+.btn-vibrant-pink:active {
+  box-shadow: 0 2px 0 0 #be185d;
+  transform: translateY(4px);
+}
+
+.btn-vibrant-orange {
+  background-color: #f97316;
+  color: #ffffff;
+  box-shadow: 0 6px 0 0 #c2410c;
+}
+.btn-vibrant-orange:hover {
+  background-color: #ea580c;
+}
+.btn-vibrant-orange:active {
+  box-shadow: 0 2px 0 0 #c2410c;
+  transform: translateY(4px);
+}
+
+.btn-vibrant-yellow {
+  background-color: #eab308;
+  color: #422006;
+  box-shadow: 0 6px 0 0 #a16207;
+}
+.btn-vibrant-yellow:hover {
+  background-color: #ca8a04;
+}
+.btn-vibrant-yellow:active {
+  box-shadow: 0 2px 0 0 #a16207;
+  transform: translateY(4px);
+}
+
+.vibrant-card {
+  background-color: #ffffff;
+  border-radius: 2rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+  border-bottom: 8px solid #dbeafe;
+  border-right: 8px solid #dbeafe;
+  border-top: 4px solid #fef08a;
+  border-left: 4px solid #fef08a;
+}
+
