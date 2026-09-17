@@ -5,8 +5,8 @@ import { sounds } from '../utils/audio';
 
 interface HeaderProps {
   user: UserProfile;
-  activeTab: 'home' | 'tutor' | 'ranks' | 'history';
-  setActiveTab: (tab: 'home' | 'tutor' | 'ranks' | 'history') => void;
+  activeTab: 'home' | 'ranks' | 'history' | 'study';
+  setActiveTab: (tab: 'home' | 'ranks' | 'history' | 'study') => void;
   onUpdateName: (name: string) => void;
   soundEnabled: boolean;
   setSoundEnabled: (enabled: boolean) => void;
@@ -123,15 +123,15 @@ export const Header: React.FC<HeaderProps> = ({
             <button
               onClick={() => {
                 sounds.playClick();
-                setActiveTab('tutor');
+                setActiveTab('study');
               }}
               className={`px-1.5 sm:px-3 py-1 rounded-lg sm:rounded-xl font-jua text-xs sm:text-sm transition-all cursor-pointer whitespace-nowrap ${
-                activeTab === 'tutor'
+                activeTab === 'study'
                   ? 'btn-vibrant-pink scale-102 font-bold'
                   : 'text-slate-700 hover:bg-yellow-50'
               }`}
             >
-              💬 <span className="hidden xs:inline">대화</span><span className="xs:hidden">대화</span>
+              📖 <span className="hidden xs:inline">구구단표</span><span className="xs:hidden">단표</span>
             </button>
             <button
               onClick={() => {

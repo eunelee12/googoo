@@ -13,12 +13,12 @@ import { QuizScreen } from './components/QuizScreen';
 import { ResultScreen } from './components/ResultScreen';
 import { RankRoadmap } from './components/RankRoadmap';
 import { HistoryView } from './components/HistoryView';
-import { TutorChatView } from './components/TutorChatView';
+import { StudyChart } from './components/StudyChart';
 import { RankUpModal } from './components/RankUpModal';
 
 export default function App() {
   const [user, setUser] = useState<UserProfile>(loadUserProfile());
-  const [activeTab, setActiveTab] = useState<'home' | 'tutor' | 'ranks' | 'history'>('home');
+  const [activeTab, setActiveTab] = useState<'home' | 'ranks' | 'history' | 'study'>('home');
   const [currentScreen, setCurrentScreen] = useState<'start' | 'quiz' | 'result'>('start');
 
   const [soundEnabled, setSoundEnabled] = useState(true);
@@ -146,15 +146,7 @@ export default function App() {
           />
         )}
 
-        {activeTab === 'tutor' && (
-          <TutorChatView
-            user={user}
-            onReturnToPractice={() => {
-              setActiveTab('home');
-              setCurrentScreen('start');
-            }}
-          />
-        )}
+        {activeTab === 'study' && <StudyChart />}
       </main>
 
       {/* Rank Up Celebration Modal */}
